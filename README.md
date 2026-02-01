@@ -39,8 +39,8 @@ The dataset contains transaction-level retail sales data including:
 - Sales distribution by time shift (Morning/Afternoon/Evening)
 
 ## 📈 Key Insights
-- Clothing and Beauty categories generate the highest revenue
-- Afternoon shift records the maximum number of orders
+- Clothing and Electronics categories generate the highest revenue
+- Evening shift records the maximum number of orders
 - Customers aged 28–48 contribute the most sales
 
 ## 📁 Project Structure
