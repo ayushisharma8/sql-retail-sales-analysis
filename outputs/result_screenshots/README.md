@@ -1,9 +1,9 @@
 ### 📊 How many sales we have?
 ![Total Number of Sales](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/main/outputs/result_screenshots/Total%20Number%20of%20Sales.png)
 
---How many customer we have?
-SELECT COUNT(DISTINCT(customer_id)) AS Total_Customers
-FROM retail_sales
+### 📊 How many customer we have?
+![Total Customers](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/b82581ce3c6a9c4cda5843f50bdf4a2381c8db4b/outputs/result_screenshots/Total%20Customers.png)
+
 
 --How many categories we have?
 SELECT DISTINCT(category) As Total_Category
