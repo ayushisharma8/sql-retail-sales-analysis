@@ -54,8 +54,7 @@
 
 
 ### 📊 Create each **shift** and number of orders (**Example: Morning <=12, Afternoon Between 12 & 17, Evening >17**).
-
-![Customer purchase number in each category](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/c29480696ef3897ce0d98fd9be902750791695f2/outputs/result_screenshots/Customer%20puchase%20number%20in%20each%20category.png)
+![Shift-wise number of orders](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/c29480696ef3897ce0d98fd9be902750791695f2/outputs/result_screenshots/Shift-wise%20number%20of%20orders.png)
 
 
 ### 📊 Create each shift and number of orders accrding to age (Age > 18 and < 28 younge age, Age > 28 and 48 middle age and above 48 old age
