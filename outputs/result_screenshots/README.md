@@ -9,10 +9,11 @@
 ![Distinct categories](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/fdc40d123401538f1c93deb6e5e735d61c600ed0/outputs/result_screenshots/Distinct%20categories.png)
 
 
---Data Analysis & Business Key Problems
---Retrieve all columns with sales done on '2022-11-05'
-SELECT * FROM retail_sales
-WHERE sale_date = '2022-11-05'
+### Data Analysis & Business Key Problems
+
+### 📊 Retrieve all columns with sales done on '2022-11-05'
+![Sales on 05 November 2022](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/ae4a67f4e206a852700591abf5a93b95e4c6d97d/outputs/result_screenshots/Sales%20done%20on%202022-11-05.png)
+
 
 --To check the data types
 EXEC sp_help 'retail_sales'; 
