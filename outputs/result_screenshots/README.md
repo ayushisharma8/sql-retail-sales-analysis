@@ -49,27 +49,13 @@
 ![Top 5 customers on total sales](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/f4cb9267f6950ad1715a4344accb6ef5ded66648/outputs/result_screenshots/Top%205%20customer%20on%20total%20sales.png)
 
 
--- Find the number of **unique customers** who purchased items from each category.
-SELECT category, COUNT(DISTINCT(customer_id)) AS No_Of_Unique_Customers
-FROM retail_sales
-GROUP BY category	
+### 📊 Find the number of **unique customers** who purchased items from each category.
+![Shift-wise number of orders](outputs/result_screenshots/Shift-wise%20number%20of%20orders.png)
 
--- Create each **shift** and number of orders (**Example: Morning <=12, Afternoon Between 12 & 17, Evening >17**).
 
-SELECT 
-CASE 
-	WHEN sale_time < '12:00:00' THEN 'Morning' 
-	WHEN sale_time >= '12:00:00' AND sale_time < '17:00:00' THEN 'Afternoon' ELSE
-	'Evening'
-	END As Shift,
-	 COUNT(*) AS Number_of_Orders
-FROM retail_sales
-GROUP BY 
-CASE 
-	WHEN sale_time < '12:00:00' THEN 'Morning' 
-	WHEN sale_time >= '12:00:00' AND sale_time < '17:00:00' THEN 'Afternoon' ELSE
-	'Evening'
-	END
+### 📊 Create each **shift** and number of orders (**Example: Morning <=12, Afternoon Between 12 & 17, Evening >17**).
+
+![Customer purchase number in each category](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/c29480696ef3897ce0d98fd9be902750791695f2/outputs/result_screenshots/Customer%20puchase%20number%20in%20each%20category.png)
 
 
 ### 📊 Create each shift and number of orders accrding to age (Age > 18 and < 28 younge age, Age > 28 and 48 middle age and above 48 old age
