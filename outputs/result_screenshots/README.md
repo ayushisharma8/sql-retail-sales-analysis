@@ -15,25 +15,13 @@
 ![Sales on 05 November 2022](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/ae4a67f4e206a852700591abf5a93b95e4c6d97d/outputs/result_screenshots/Sales%20done%20on%202022-11-05.png)
 
 
---To check the data types
-EXEC sp_help 'retail_sales'; 
-
-
 ### Retrieve all transactions where the category is **'Clothing'** and the quantity sold is more than 1 in the month of **Nov-2022**.
 
 ### 📊 Clothing Category Sales (Quantity > 1, Nov 2022)
 ![Clothing quantity sold more than 1 for Nov 2022](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/8b050eb1156566472edd4c646ba49d4bc4436d7d/outputs/result_screenshots/Category%20Clothing%20and%20quantity%20sold%20more%20than%201%20for%20Nov%202022.png)
 
-
-
-SELECT * FROM retail_sales
-WHERE category = 'Clothing' and quantiy >1 and sale_date between '2022-11-01' and '2022-11-30'
-
-
--- Calculate the total sales (**total_sale**) for each category.
-SELECT category As Category, Sum(total_sale) As Net_Sale, COUNT(total_sale) As Total_Orders
-FROM retail_sales
-GROUP BY category
+### 📊 Calculate the total sales (**total_sale**) for each category.
+![Total Sales for each category](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/c5ea4987cb8c7ba64983fa46bf2d43a5cffd9e52/outputs/result_screenshots/Total%20Sales%20for%20each%20category.png)
 
 
 -- Find the average age of customers who purchased items from the **'Beauty'** category.
