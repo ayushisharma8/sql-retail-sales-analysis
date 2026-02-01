@@ -1,5 +1,5 @@
 ### 📊 How many sales we have?
-![Total Number of Sales](outputs/result_screenshots/Total%20Number%20of%20Sales.png)
+![Total Number of Sales](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/main/outputs/result_screenshots/Total%20Number%20of%20Sales.png)
 
 --How many customer we have?
 SELECT COUNT(DISTINCT(customer_id)) AS Total_Customers
