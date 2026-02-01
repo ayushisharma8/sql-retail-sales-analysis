@@ -36,43 +36,18 @@
 ![Total transactions by each gender in each category](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/990841595645e646fe578fe55d16edb62c0c0f2b/outputs/result_screenshots/Total%20transaction%20by%20each%20gender%20in%20each%20category.png)
 
 
--- Calculate the average sale for each month. Find out the best-selling month in each year.
+### 📊 Calculate the average sale for each month. Find out the best-selling month in each year.
 -- Average Sale for Each Month
-SELECT YEAR(sale_date) AS Year , 
-DATENAME(MONTH,sale_date) AS Month, 
-AVG(total_sale) AS AVG_Sales
-FROM retail_sales
-GROUP BY YEAR(sale_date),
-DATENAME(MONTH,sale_date)
+![Average sales for each month in each year](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/f4cb9267f6950ad1715a4344accb6ef5ded66648/outputs/result_screenshots/Avg%20sales%20for%20each%20month%20in%20each%20year.png)
+
 
 -- Best-Selling Month in Each Year
-
-WITH MonthlySales AS
-(
-SELECT  YEAR(sale_date) AS Year, 
-		DATENAME(MONTH,sale_date) AS Month, 
-		Round(AVG(total_sale),0) AS AVG_Sales
-FROM retail_sales
-GROUP BY YEAR(sale_date),
-		 DATENAME(MONTH,sale_date)
-)
-SELECT Year,
-	Month,
-	AVG_Sales,
-	Rank
-FROM
-(
-SELECT *,
-		RANK() OVER (PARTITION BY Year ORDER BY AVG_Sales DESC) AS Rank
-FROM MonthlySales) AS ranked
-WHERE Rank = 1;
+![Best selling month in each year](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/f4cb9267f6950ad1715a4344accb6ef5ded66648/outputs/result_screenshots/Best%20selling%20month%20in%20each%20year.png)
 
 
--- Find the **top 5 customers** based on the highest **total sales**.
-SELECT TOP 5 customer_id, SUM(total_sale) AS Net_sale
-FROM retail_sales
-Group BY customer_id
-ORDER BY SUM(total_sale) DESC
+### 📊 Find the **top 5 customers** based on the highest **total sales**.
+![Top 5 customers on total sales](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/f4cb9267f6950ad1715a4344accb6ef5ded66648/outputs/result_screenshots/Top%205%20customer%20on%20total%20sales.png)
+
 
 -- Find the number of **unique customers** who purchased items from each category.
 SELECT category, COUNT(DISTINCT(customer_id)) AS No_Of_Unique_Customers
@@ -97,44 +72,14 @@ CASE
 	END
 
 
--- Create each shift and number of orders accrding to age (Age > 18 and < 28 younge age, Age > 28 and 48 middle age and above 48 old age
-SELECT
-CASE
-	WHEN age >= 18 AND age < 28 THEN '18 - 28'
-	WHEN age >= 28 AND age < 48 THEN '28 - 48'
-	ELSE '48 - 64'
-END AS Age_Group,
-
-	COUNT(*) AS Number_of_Orders
-	FROM retail_sales
-	GROUP BY 
-	
-CASE
-	WHEN age >= 18 AND age < 28 THEN '18 - 28'
-	WHEN age >= 28 AND age < 48 THEN '28 - 48'
-ELSE '48 - 64'
-END
-order by COUNT(*) desc
+### 📊 Create each shift and number of orders accrding to age (Age > 18 and < 28 younge age, Age > 28 and 48 middle age and above 48 old age
+![Age group wise number of orders](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/f4cb9267f6950ad1715a4344accb6ef5ded66648/outputs/result_screenshots/Agr%20group%20wise%20number%20of%20orders.png)
 
 
--- Find Top 5 quantity ordered of which category and which customer
-WITH RankedOrders AS 
-(SELECT category,
-		customer_id, 
-		COUNT(quantiy) AS Total_Quantity_Ordered,
-		RANK() OVER (PARTITION BY category ORDER BY COUNT(quantiy) DESC) AS rank
-FROM retail_sales
-GROUP BY category,
-	customer_id)
-SELECT category,
-		customer_id,
-		Total_Quantity_Ordered,
-		rank
-FROM RankedOrders
-WHERE rank<=5
-ORDER BY 
-		category,
-		Total_Quantity_Ordered DESC
+
+### 📊 Find Top 5 quantity ordered of which category and which customer
+![Top 5 quantity ordered by category and customer](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/f4cb9267f6950ad1715a4344accb6ef5ded66648/outputs/result_screenshots/Top%205%20quantity%20ordered%20of%20which%20category%20and%20which%20customer.png)
+
 
 
 
