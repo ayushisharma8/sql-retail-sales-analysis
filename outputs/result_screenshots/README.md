@@ -5,9 +5,9 @@
 ![Total Customers](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/b82581ce3c6a9c4cda5843f50bdf4a2381c8db4b/outputs/result_screenshots/Total%20Customers.png)
 
 
---How many categories we have?
-SELECT DISTINCT(category) As Total_Category
-FROM retail_sales
+### 📊 How many categories we have?
+![Distinct categories](https://raw.githubusercontent.com/ayushisharma8/SQL-Retail-Sales-Analysis/fdc40d123401538f1c93deb6e5e735d61c600ed0/outputs/result_screenshots/Distinct%20categories.png)
+
 
 --Data Analysis & Business Key Problems
 --Retrieve all columns with sales done on '2022-11-05'
